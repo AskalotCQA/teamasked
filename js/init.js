@@ -46,13 +46,12 @@ $(function () {
         var $target = (href.indexOf('#', href.length - 1)) ? $($(this).attr('href')) : $body;
 
         $('html, body').animate({
-            scrollTop: $target.offset().top
+            scrollTop: $target.offset().top + 80
         }, 1000);
 
         event.preventDefault();
     });
 
-    $.stellar();
     $("[data-toggle=tooltip]").tooltip();
     $body.scrollspy({target: '#header-navbar'})
 });
