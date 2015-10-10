@@ -1,0 +1,194 @@
+* {
+    box-shadow: none !important;
+    outline: none !important;
+}
+
+*:not(.img-circle) {
+    border-radius: 0 !important;
+}
+
+body {
+    font-size: 16px;
+}
+
+header {
+    margin: 0;
+}
+
+footer {
+    margin: 400px 0 100px;
+    font-size: 14px;
+}
+
+h1 {
+    padding-top: 75px;
+}
+
+p {
+    text-align: justify;
+}
+
+span[data-toggle=tooltip] {
+    cursor: help;
+}
+
+.btn-production {
+    display: inline-block;
+    margin-top: 30px;
+}
+
+.jumbotron {
+    background: url("../img/pattern.jpg") #232323;
+    color: #fff;
+    min-height: 100vh;
+    text-align: center;
+    padding-top: 10vh;
+    margin: 0;
+    background-attachment: fixed;
+}
+
+.jumbotron p {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.jumbotron h1 {
+    font-size: 80px;
+    transition: opacity 3.2s !important;
+    text-shadow: 0 0 96px #A7672A;
+}
+
+.link-muted, .link-muted:focus, .link-muted:hover {
+    color: #333;
+}
+
+.media {
+    margin-top: 50px;
+}
+
+.media p {
+    text-align: center;
+    color: #555;
+}
+
+.nav > li > a {
+    display: inline-block;
+}
+
+.nav li > a:focus, .nav li > a:hover {
+    background: transparent;
+    text-decoration: underline;
+}
+
+.nav-narrow > li > a {
+    padding: 10px 0;
+}
+
+.sidebar.affix {
+    position: fixed;
+    top: 75px;
+}
+
+.sidebar ul ul {
+    display: none;
+    font-size: 14px;
+}
+
+.sidebar ul ul li > a {
+    padding-left: 25px;
+}
+
+.sidebar ul li.active > a {
+    font-weight: bolder;
+}
+
+.sidebar ul ul li.active > a {
+    font-weight: bolder;
+}
+
+.sidebar .active ul {
+    display: block;
+}
+
+.text-capital {
+    font-variant: small-caps;
+}
+
+.text-muted a {
+    color: #999;
+}
+
+.text-muted a:focus, .text-muted a:hover {
+    color: #888;
+}
+
+#header-navbar {
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s;
+    border: 0;
+}
+
+.navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus {
+    box-shadow: inset 0px -2px 0px 0px #fff !important;
+    border-bottom: 2px solid #222;
+    background: none;
+    transition: color 0.2s;
+}
+
+#project-name, #project-title, #project-links {
+    opacity: 0;
+    transition: opacity 1.5s;
+}
+
+.circle-button {
+    border: 1px solid #fff;
+    border-radius: 50% !important;
+    display: block;
+    width: 40px;
+    height: 40px;
+    margin: 0 auto;
+    margin-top: 40px;
+    opacity: 0;
+}
+
+a.circle-button {
+    font-size: 28px;
+    color: #fff;
+    position: relative;
+    top: 0px;
+    transition: all 0.3s ease-in-out;
+}
+
+a.circle-button > i {
+    position: relative;
+    top: -9px;
+}
+
+a.circle-button:hover {
+    border: 1px solid #ddd;
+    color: #ddd;
+    position: relative;
+    top: 2px;
+}
+
+#project-links {
+    margin: 100px auto;
+}
+
+#project-links li {
+    line-height: 1.2
+}
+
+#project-links a, #project-links a:visited, #project-links a:active {
+    color: #96824B;
+    padding: 3px 0;
+}
+
+#project-links a:hover {
+    color: #BFA86A
+}
+
+.transparent-fadeIn {
+    opacity: 0;
+}

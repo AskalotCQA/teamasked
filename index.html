@@ -1,379 +1,341 @@
 <!DOCTYPE html>
 <html>
-  <head lang="sk">
-    <meta charset="utf-8" />
+<head lang="sk">
+    <meta charset="utf-8"/>
     <title>Askalot to edX &middot; Tím AskEd</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="AskEd &ndash; integrácia Askalotu do edX" />
-    <meta name="author" content="AskEd" />
-    <link rel="apple-touch-icon" href="img/icons/touchicon.png" />
-    <link rel="icon" href="img/icons/favicon.png" />
-    <!--[if IE]><link rel="shortcut icon" href="img/icons/favicon.ico" /><![endif]-->
-    <meta name="msapplication-TileColor" content="#fff" />
-    <meta name="msapplication-TileImage" content="img/icons/tileicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content="AskEd &ndash; integrácia Askalotu do edX"/>
+    <meta name="author" content="AskEd"/>
+    <link rel="apple-touch-icon" href="img/icons/touchicon.png"/>
+    <link rel="icon" href="img/icons/favicon.png"/>
+    <!--[if IE]>
+    <link rel="shortcut icon" href="img/icons/favicon.ico"/><![endif]-->
+    <meta name="msapplication-TileColor" content="#fff"/>
+    <meta name="msapplication-TileImage" content="img/icons/tileicon.png"/>
     <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
     <link href="css/font-awesome.min.css" rel="stylesheet" media="screen">
+    <link href="css/style.css" rel="stylesheet">
     <!--[if lt IE 9]>
-      <script src="js/html5shiv.js"></script>
-      <script src="js/respond.min.js"></script>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
     <![endif]-->
-    <style type="text/css">
-      * { box-shadow: none !important; outline: none !important; }
-      *:not(.img-circle) { border-radius: 0 !important; }
-
-      body { font-size: 16px; }
-      header { margin: 0; }
-      footer { margin: 400px 0 100px; font-size: 14px; }
-
-      h1 { padding-top: 75px; }
-
-      p { text-align: justify; }
-      span[data-toggle=tooltip] { cursor: help; }
-
-      .btn-production { display: inline-block; margin-top: 30px; }
-
-      .jumbotron { background: url("img/pattern.jpg") #232323; color: #fff; min-height: 100vh; text-align: center; padding-top: 10vh; margin: 0; }
-      .jumbotron p { text-align: center; margin-top: 30px; }
-      .jumbotron h1 { font-size: 80px; transition: opacity 3.2s !important; text-shadow: 0 0 96px #A7672A;}
-
-      .link-muted, .link-muted:focus, .link-muted:hover { color: #333; }
-
-      .media { margin-top: 50px; }
-      .media p { text-align: center; color: #555;}
-
-      .nav > li > a { display: inline-block; }
-      .nav li > a:focus, .nav li > a:hover { background: transparent; text-decoration: underline; }
-      .nav-narrow > li > a { padding: 10px 0; }
-
-      .sidebar.affix { position: fixed; top: 75px; }
-      .sidebar ul ul { display: none; font-size: 14px; }
-      .sidebar ul ul li > a { padding-left: 25px; }
-      .sidebar ul li.active > a { font-weight: bolder; }
-      .sidebar ul ul li.active > a { font-weight: bolder; }
-      .sidebar .active ul { display: block; }
-
-      .text-capital { font-variant: small-caps; }
-      .text-muted a { color: #999; }
-      .text-muted a:focus, .text-muted a:hover { color: #888; }
-
-      #header-navbar { visibility: hidden; opacity: 0; transition: opacity 0.3s; border: 0; }
-      .navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:hover, .navbar-inverse .navbar-nav>.active>a:focus { box-shadow: inset 0px -2px 0px 0px #fff !important; border-bottom: 2px solid #222; background: none; transition: color 0.2s; }
-
-      #project-name, #project-title, #project-links { opacity: 0; transition: opacity 1.5s; }
-
-      .circle-button { border: 1px solid #fff; border-radius: 50% !important; display: block; width: 40px; height: 40px; margin: 0 auto; margin-top: 40px; opacity: 0; }
-      a.circle-button { font-size: 28px; color: #fff; position: relative; top: 0px; transition: all 0.3s ease-in-out; }
-      a.circle-button > i { position: relative; top: -9px; }
-      a.circle-button:hover { border: 1px solid #ddd; color: #ddd; position: relative; top: 2px; }
-
-      #project-links { margin: 100px auto; }
-      #project-links li { line-height: 1.2 }
-      #project-links a, #project-links a:visited, #project-links a:active { color: #96824B; padding: 3px 0; }
-      #project-links a:hover { color: #BFA86A }
-    </style>
-  </head>
-  <body>
-    <header id="header-navbar" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-      <div class="container">
+</head>
+<body>
+<header id="header-navbar" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
         <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#"><span class="text-capital">AskEd</span></a>
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#"><span class="text-capital">AskEd</span></a>
         </div>
         <div class="collapse navbar-collapse">
-          <ul class="nav navbar-nav">
-            <li><a href="#about">O projekte</a></li>
-            <li><a href="#documents">Dokumenty</a></li>
-            <li><a href="#authors">Autori</a></li>
-            <li><a href="#contact">Kontakt</a></li>
-          </ul>
+            <ul class="nav navbar-nav">
+                <li><a href="#about">O projekte</a></li>
+                <li><a href="#documents">Dokumenty</a></li>
+                <li><a href="#authors">Autori</a></li>
+                <li><a href="#contact">Kontakt</a></li>
+            </ul>
         </div>
-      </div>
-    </header>
+    </div>
+</header>
 
-    <div class="jumbotron">
-      <div class="container">
+<div class="jumbotron" data-stellar-background-ratio="0.5">
+    <div class="container">
         <h1 id="project-name">Askalot2edX</h1>
+
         <p id="project-title">Integrácia Askalotu do edX - massive open online course provider</p>
 
         <div class="row" id="project-links">
-          <div class="col-md-6">
-            <ul class="nav">
-              <li class="text-right"><a href="http://fiit.stuba.sk"><em>Fakulta informatiky a informačných technológií</em></a></li>
-              <li class="text-right"><a href="http://fiit.stuba.sk/~bielik/courses/tp-slov"><em>Tímový projekt 2015/16</em></a></li>
-            </ul>
-          </div>
-          <div class="col-md-6">
-            <ul class="nav">
-              <li class="text-left"><a href="http://stuba.sk"><em>Slovenská technická univerzita v Bratislave</em></a></li>
-              <li class="text-left"><a href="#authors"><em>Tím č. 06 – <span class="text-capital">AskEd</span></em></a></li>
-            </ul>
-          </div>
+            <div class="col-md-6">
+                <ul class="nav">
+                    <li class="text-right"><a href="http://fiit.stuba.sk"><em>Fakulta informatiky a informačných
+                        technológií</em></a></li>
+                    <li class="text-right"><a href="http://fiit.stuba.sk/~bielik/courses/tp-slov"><em>Tímový projekt
+                        2015/16</em></a></li>
+                </ul>
+            </div>
+            <div class="col-md-6">
+                <ul class="nav">
+                    <li class="text-left"><a href="http://stuba.sk"><em>Slovenská technická univerzita v Bratislave</em></a>
+                    </li>
+                    <li class="text-left"><a href="#authors"><em>Tím č. 06 – <span
+                        class="text-capital">AskEd</span></em></a></li>
+                </ul>
+            </div>
         </div>
 
         <a href="#about" class="circle-button"><i class="fa fa-angle-down"></i></a>
-      </div>
     </div>
+</div>
 
-    <div class="container hidden-before-load">
-      <div class="row">
+<div class="hidden-before-load">
+    <div class="row">
         <div class="col-xs-12" role="main">
-          <section>
-            <div class="page-header">
-              <h1 id="about">O projekte</h1>
-            </div>
-
-            <div class="row">
-              <div class="col-xs-2">
-                <p class="text-center"><i class="fa fa-info fa-3x"></i></p>
-              </div>
-              <div class="col-xs-10">
-                <p>
-                 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                </p>
-              </div>
-            </div>
-
-          <section>
-            <div class="page-header">
-              <h1 id="documents">Dokumenty</i></h1>
-            </div>
-
-            <div class="row">
-              <div class="col-xs-2">
-                <p class="text-center"><i class="fa fa-file-text-o fa-3x"></i></p>
-              </div>
-              <div class="col-xs-10">
-                <div class="row">
-                  <p>
-                    Dokumentácia k projektu a zápisnice z pravidelných formálnych aj neformálnych stretnutí tímu.
-                  </p>
+            <section class="transparent-fadeIn">
+                <div class="page-header">
+                    <h1 id="about">O projekte</h1>
                 </div>
 
                 <div class="row">
-                  <div class="col-md-6">
-                    <h3>Zimný semester</h3>
-                    <ul>
-                      <li>
-                      </li>
-                    </ul>
-                  </div>
-                  <div class="col-md-6 hide">
-                    <h3>Letný semester</h3>
-
-                    <ul>
-                      <li>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-
-              <div class="row">
-                <div class="col-sm-6 hide">
-                  <h3>Zápisnice z neformálnych stretnutí</h3>
-
-                  <ol>
-                    <li></li>
-                  </ol>
-
+                    <div class="col-xs-2">
+                        <p class="text-center"><i class="fa fa-info fa-3x"></i></p>
+                    </div>
+                    <div class="col-xs-10">
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
+                            ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                            laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+                            voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+                            cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                        </p>
+                    </div>
                 </div>
 
-                <div class="col-sm-6 hide">
-                  <h3>Retrospektívy</h3>
+                <section class="transparent-fadeIn">
+                    <div class="page-header">
+                        <h1 id="documents">Dokumenty</i></h1>
+                    </div>
 
-                  <ul>
-                    <li></li>
-                  </ul>
+                    <div class="row">
+                        <div class="col-xs-2">
+                            <p class="text-center"><i class="fa fa-file-text-o fa-3x"></i></p>
+                        </div>
+                        <div class="col-xs-10">
+                            <div class="row">
+                                <p>
+                                    Dokumentácia k projektu a zápisnice z pravidelných formálnych aj neformálnych
+                                    stretnutí tímu.
+                                </p>
+                            </div>
 
-                </div>
-              </div>
-            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <h3>Zimný semester</h3>
+                                    <ul>
+                                        <li>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-6 hide">
+                                    <h3>Letný semester</h3>
 
-            <div class="row" style="height: 50px;"></div>
+                                    <ul>
+                                        <li>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
 
-            <div class="row">
-              <div class="col-xs-2">
-                <p class="text-center"><i class="fa fa-picture-o fa-3x"></i></p>
-              </div>
-              <div class="col-xs-10">
-                <div class="row">
-                  <div class="col-md-6">
-                    <h3>Prezentácie a plagáty</h3>
+                        <div class="row">
+                            <div class="col-sm-6 hide">
+                                <h3>Zápisnice z neformálnych stretnutí</h3>
 
-                    <ul>
-                      <li></li>
-                    </ul>
+                                <ol>
+                                    <li></li>
+                                </ol>
 
-                  </div>
+                            </div>
 
-                </div>
-              </div>
-            </div>
-          </section>
+                            <div class="col-sm-6 hide">
+                                <h3>Retrospektívy</h3>
 
-          <section>
-            <div class="page-header">
-              <h1 id="authors">Autori</h1>
-            </div>
+                                <ul>
+                                    <li></li>
+                                </ul>
 
-            <div class="row">
-              <div class="col-xs-2">
-                <p class="text-center"><i class="fa fa-users fa-3x"></i></p>
-              </div>
-              <div class="col-xs-10">
-                <div class="row">
-                  <p>
-                    Tím <span class="text-capital">AskEd</span> tvoria šiesti študenti prvého ročníka inžinierskeho štúdia na FIIT STU a ich mentor Ivan Srba.
-                  <p>
-                </div>
-              </div>
-            </div>
+                            </div>
+                        </div>
+                    </div>
 
-            <div class="page-header">
-              <h3 class="text-center">Tím č. 6 &mdash; <span class="text-capital">AskEd</span></h3>
-            </div>
+                    <div class="row" style="height: 50px;"></div>
 
-            <div class="row media">
-              <div class="col-md-6 col-md-offset-3 col-sm-12 text-center">
-                <img class="img-circle" src="https://gravatar.com/avatar/0ac3817122c10f1e3d36b55fcbfe3dd3?rating=&amp;d=mm&amp;size=200" />
-                <h3>Ivan Srba <br><small>Mentor tímu</small></h3>
-                <p>Zaoberá sa výskumom v oblasti informačných systémov pre zdieľanie znalostí so zameraním na CQA systémy. Ma skúsenosti s programovacími jazykmi a webovými technológiami ako Ruby, JavaScript, PHP, Node.js a s databázovými technológiami MySQL a PostgreSQL. Pracoval na viacerých projektoch, ktoré sa úspešne používajú aj v rámci fakulty (napr. YonBan). Zaujíma sa o fotografovanie, cestovanie a turistiku, vo voľnom čase sa rád hrá s bublifukom.</p>
-              </div>
-            </div>
+                    <div class="row">
+                        <div class="col-xs-2">
+                            <p class="text-center"><i class="fa fa-picture-o fa-3x"></i></p>
+                        </div>
+                        <div class="col-xs-10">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <h3>Prezentácie a plagáty</h3>
 
-            <div class="row media">
-              <div class="col-md-4 col-sm-6 col-xs-12 text-center">
-                <img class="img-circle" src="https://gravatar.com/avatar/fffdba773f47cdbded51bfe3338baf9e?rating=&amp;d=mm&amp;size=200" />
-                <h3>Martin Černák <br><small>Manažment retrospektívy, dizajnu a správca webu</small></h3>
-                <p></p>
-              </div>
+                                    <ul>
+                                        <li></li>
+                                    </ul>
 
-              <div class="col-md-4 col-sm-6 col-xs-12 text-center">
-                <img class="img-circle" src="http://gravatar.com/avatar/34ed5157edb8b8a3a100fbafe787a3f1?rating=&amp;d=mm&amp;size=200" />
-                <h3>Ladislav Gallay <br><small>Manažment podpory vývoja, integrácie a verzií softvéru</small></h3>
-                <p></p>
-              </div>
+                                </div>
 
-              <div class="col-md-4 col-sm-6 col-xs-12 text-center">
-                <img class="img-circle" src="https://gravatar.com/avatar/a99f0c0b9b0bbf2c787a80a2d87abf4f?rating=&amp;d=mm&amp;size=200" />
-                <h3>Eva Hnilicová <br><small>Manažment riadenia dokumentácie a dizajnu</small></h3>
-                <p></p>
-              </div>
-            </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
 
-            <div class="row media">
-              <div class="col-md-4 col-sm-6 col-xs-12 text-center">
-                <img class="img-circle" src="https://gravatar.com/avatar/af387e3e96bcca437ee0dfa47b3127b1?rating=&amp;d=mm&amp;size=200" />
-                <h3>Adrián Huňa <br><small>Manažment kvality kódu a testovania</small></h3>
-                <p>Pracuje s webovými technológiami na oboch frontoch. V bakalárskej práci skúmal reputáciu používateľov a následne vyvinul systém reputácie v systéme Askalot. Zaujíma ho psychológia a architektúra.</p>
-              </div>
+                <section class="transparent-fadeIn">
+                    <div class="page-header">
+                        <h1 id="authors">Autori</h1>
+                    </div>
 
-              <div class="col-md-4 col-sm-6 col-xs-12 text-center">
-                <img class="img-circle" src="https://gravatar.com/avatar/d44370839097feef724ae8d02601f977?rating=&amp;d=mm&amp;size=200" />
-                <h3>Filip Jandura <br><small>Manažment udržiavania systému na projektový manažment</small></h3>
-                <p></p>
-              </div>
+                    <div class="row">
+                        <div class="col-xs-2">
+                            <p class="text-center"><i class="fa fa-users fa-3x"></i></p>
+                        </div>
+                        <div class="col-xs-10">
+                            <div class="row">
+                                <p>
+                                    Tím <span class="text-capital">AskEd</span> tvoria šiesti študenti prvého ročníka
+                                    inžinierskeho štúdia na FIIT STU a ich mentor Ivan Srba.
 
-              <div class="col-md-4 col-sm-6 col-xs-12 text-center">
-                <img class="img-circle" src="https://gravatar.com/avatar/faa7ae3bc1997e597d1e17e906533273?rating=&amp;d=mm&amp;size=200" />
-                <h3>Tibor Žuffa <br><small>Manažment komunikácie a exportovania úloh z projektového systému</small></h2>
-                <p></p>
-              </div>
-            </div>
-          </section>
+                                <p>
+                            </div>
+                        </div>
+                    </div>
 
-          <section>
-            <div class="page-header">
-              <h1 id="contact">Kontakt</h1>
-            </div>
+                    <div class="page-header">
+                        <h3 class="text-center">Tím č. 6 &mdash; <span class="text-capital">AskEd</span></h3>
+                    </div>
 
-            <div class="row">
-              <div class="col-md-7">
-                <h3>Napíšte nám</h3>
-                <p>
-                  <a class="btn btn-default btn-lg" href="mailto:asked@googlegroups.com">
-                    asked@googlegroups.com
-                  </a>
-                </p>
-              </div>
+                    <div class="row media">
+                        <div class="col-md-6 col-md-offset-3 col-sm-12 text-center">
+                            <img class="img-circle"
+                                 src="https://gravatar.com/avatar/0ac3817122c10f1e3d36b55fcbfe3dd3?rating=&amp;d=mm&amp;size=200"/>
 
-              <div class="col-md-5">
-                <h3>Adresa <i class="fa fa-envelope-o"></i></h3>
+                            <h3>Ivan Srba <br>
+                                <small>Mentor tímu</small>
+                            </h3>
+                            <p>Zaoberá sa výskumom v oblasti informačných systémov pre zdieľanie znalostí so zameraním
+                                na CQA systémy. Ma skúsenosti s programovacími jazykmi a webovými technológiami ako
+                                Ruby, JavaScript, PHP, Node.js a s databázovými technológiami MySQL a PostgreSQL.
+                                Pracoval na viacerých projektoch, ktoré sa úspešne používajú aj v rámci fakulty (napr.
+                                YonBan). Zaujíma sa o fotografovanie, cestovanie a turistiku, vo voľnom čase sa rád hrá
+                                s bublifukom.</p>
+                        </div>
+                    </div>
 
-                <address class="well">
-                  Slovenská technická univerzita v Bratislave<br/>
-                  Fakulta informatiky a informačných technológií<br/>
-                  Ilkovičova 2<br/>
-                  842 16 Bratislava 4 - Karlova Ves<br/>
-                  Slovensko<br/>
-                  <br/>
-                  <span data-toggle="tooltip" data-placement="bottom" title="Global Positioning System">GPS</span>: <a class="link-muted" href="https://www.google.com/maps?t=m&amp;ll=48.15342100000003%2C17.072221299999992&amp;spn=0.005976687506477521%2C0.011944952557732511&amp;output=classic&amp;cid=0x8b585229fc0ae860">48.153429, 17.071716</a>
-                </address>
-              </div>
-            </div>
-          </section>
+                    <div class="row media">
+                        <div class="col-md-4 col-sm-6 col-xs-12 text-center">
+                            <img class="img-circle"
+                                 src="https://gravatar.com/avatar/fffdba773f47cdbded51bfe3338baf9e?rating=&amp;d=mm&amp;size=200"/>
+
+                            <h3>Martin Černák <br>
+                                <small>Manažment retrospektívy, dizajnu a správca webu</small>
+                            </h3>
+                            <p></p>
+                        </div>
+
+                        <div class="col-md-4 col-sm-6 col-xs-12 text-center">
+                            <img class="img-circle"
+                                 src="http://gravatar.com/avatar/34ed5157edb8b8a3a100fbafe787a3f1?rating=&amp;d=mm&amp;size=200"/>
+
+                            <h3>Ladislav Gallay <br>
+                                <small>Manažment podpory vývoja, integrácie a verzií softvéru</small>
+                            </h3>
+                            <p></p>
+                        </div>
+
+                        <div class="col-md-4 col-sm-6 col-xs-12 text-center">
+                            <img class="img-circle"
+                                 src="https://gravatar.com/avatar/a99f0c0b9b0bbf2c787a80a2d87abf4f?rating=&amp;d=mm&amp;size=200"/>
+
+                            <h3>Eva Hnilicová <br>
+                                <small>Manažment riadenia dokumentácie a dizajnu</small>
+                            </h3>
+                            <p></p>
+                        </div>
+                    </div>
+
+                    <div class="row media">
+                        <div class="col-md-4 col-sm-6 col-xs-12 text-center">
+                            <img class="img-circle"
+                                 src="https://gravatar.com/avatar/af387e3e96bcca437ee0dfa47b3127b1?rating=&amp;d=mm&amp;size=200"/>
+
+                            <h3>Adrián Huňa <br>
+                                <small>Manažment kvality kódu a testovania</small>
+                            </h3>
+                            <p>Pracuje s webovými technológiami na oboch frontoch. V bakalárskej práci skúmal reputáciu
+                                používateľov a následne vyvinul systém reputácie v systéme Askalot. Zaujíma ho
+                                psychológia a architektúra.</p>
+                        </div>
+
+                        <div class="col-md-4 col-sm-6 col-xs-12 text-center">
+                            <img class="img-circle"
+                                 src="https://gravatar.com/avatar/d44370839097feef724ae8d02601f977?rating=&amp;d=mm&amp;size=200"/>
+
+                            <h3>Filip Jandura <br>
+                                <small>Manažment udržiavania systému na projektový manažment</small>
+                            </h3>
+                            <p></p>
+                        </div>
+
+                        <div class="col-md-4 col-sm-6 col-xs-12 text-center">
+                            <img class="img-circle"
+                                 src="https://gravatar.com/avatar/faa7ae3bc1997e597d1e17e906533273?rating=&amp;d=mm&amp;size=200"/>
+
+                            <h3>Tibor Žuffa <br>
+                                <small>Manažment komunikácie a exportovania úloh z projektového systému</small>
+                                </h2>
+                                <p></p>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="transparent-fadeIn">
+                    <div class="page-header">
+                        <h1 id="contact">Kontakt</h1>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-7">
+                            <h3>Napíšte nám</h3>
+
+                            <p>
+                                <a class="btn btn-default btn-lg" href="mailto:asked@googlegroups.com">
+                                    asked@googlegroups.com
+                                </a>
+                            </p>
+                        </div>
+
+                        <div class="col-md-5">
+                            <h3>Adresa <i class="fa fa-envelope-o"></i></h3>
+
+                            <address class="well">
+                                Slovenská technická univerzita v Bratislave<br/>
+                                Fakulta informatiky a informačných technológií<br/>
+                                Ilkovičova 2<br/>
+                                842 16 Bratislava 4 - Karlova Ves<br/>
+                                Slovensko<br/>
+                                <br/>
+                                <span data-toggle="tooltip" data-placement="bottom" title="Global Positioning System">GPS</span>:
+                                <a class="link-muted"
+                                   href="https://www.google.com/maps?t=m&amp;ll=48.15342100000003%2C17.072221299999992&amp;spn=0.005976687506477521%2C0.011944952557732511&amp;output=classic&amp;cid=0x8b585229fc0ae860">48.153429,
+                                    17.071716</a>
+                            </address>
+                        </div>
+                    </div>
+                </section>
         </div>
-      </div>
     </div>
+</div>
 
-    <footer class="hidden-before-load">
-      <div class="container">
+<footer class="hidden-before-load">
+    <div class="container">
         <p class="text-center text-muted">
-          Copyright 2015 Martin Černák, Ladislav Gallay, Eva Hnilicová, Adrián Huňa, Filip Jandura, Tibor Žuffa, Ivan Srba
-          <br class="visible-md visible-lg" />
-          <a href="http://stuba.sk">Slovenská technická univerzita v&nbsp;Bratislave</a>,
-          <a href="http://fiit.stuba.sk">Fakulta informatiky a&nbsp;informačných technológií</a>,
-          <a href="http://fiit.stuba.sk/~bielik/courses/tp-slov">Tímový projekt&nbsp;2015/16</a>
+            Copyright 2015 Martin Černák, Ladislav Gallay, Eva Hnilicová, Adrián Huňa, Filip Jandura, Tibor Žuffa, Ivan
+            Srba
+            <br class="visible-md visible-lg"/>
+            <a href="http://stuba.sk">Slovenská technická univerzita v&nbsp;Bratislave</a>,
+            <a href="http://fiit.stuba.sk">Fakulta informatiky a&nbsp;informačných technológií</a>,
+            <a href="http://fiit.stuba.sk/~bielik/courses/tp-slov">Tímový projekt&nbsp;2015/16</a>
         </p>
-      </div>
-    </footer>
+    </div>
+</footer>
 
-    <script src="js/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.stellar.min.js"></script>
 
-    <script type="text/javascript">
-      $(function() {
-        $("[data-toggle=tooltip]").tooltip();
-
-        $(window).scroll(function () {
-          var pos = $(window).scrollTop();
-
-          if (pos > 300 ) {
-            $('#header-navbar').css('visibility', 'visible');
-            $('#header-navbar').css('opacity', '1');
-          } else {
-            $('#header-navbar').css('visibility', 'hidden');
-            $('#header-navbar').css('opacity', '0');
-          }
-
-          $('#sidebar').css('visibility', pos < $(window).height() ? 'hidden' : 'visible');
-        });
-
-        $('.hidden-before-load').hide();
-
-        $('#project-name').css('opacity', '1');
-        setTimeout(function() { $('#project-title').css('opacity', '1'); }, 1000);
-        setTimeout(function() { $('#project-links').css('opacity', '1'); }, 1000);
-        setTimeout(function() { $('.circle-button').css('opacity', '1'); }, 1000);
-        setTimeout(function() { $('.hidden-before-load').show();  $('body').scrollspy({ target: '#header-navbar' }) }, 1500);
-
-        $('a[href*=#]:not([href=#])').click(function() {
-          if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-            var target = $(this.hash);
-            target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-            if (target.length) {
-              $('html,body').animate({
-                scrollTop: target.offset().top
-              }, 1000);
-              return false;
-            }
-          }
-        });
-      });
-    </script>
-  </body>
+<script src="js/init.js"></script>
+</body>
 </html>
