@@ -355,11 +355,11 @@
 
         $('.hidden-before-load').hide();
 
-        setTimeout(function() { $('#project-name').css('opacity', '1'); }, 700);
-        setTimeout(function() { $('#project-title').css('opacity', '1'); }, 2000);
-        setTimeout(function() { $('#project-links').css('opacity', '1'); }, 2000);
-        setTimeout(function() { $('.circle-button').css('opacity', '1'); }, 2000);
-        setTimeout(function() { $('.hidden-before-load').show();  $('body').scrollspy({ target: '#header-navbar' }) }, 2500);
+        $('#project-name').css('opacity', '1');
+        setTimeout(function() { $('#project-title').css('opacity', '1'); }, 1000);
+        setTimeout(function() { $('#project-links').css('opacity', '1'); }, 1000);
+        setTimeout(function() { $('.circle-button').css('opacity', '1'); }, 1000);
+        setTimeout(function() { $('.hidden-before-load').show();  $('body').scrollspy({ target: '#header-navbar' }) }, 1500);
 
         $('a[href*=#]:not([href=#])').click(function() {
           if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
