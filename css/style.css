@@ -20,11 +20,6 @@ footer {
     font-size: 14px;
 }
 
-/*
-h1 {
-    padding-top: 75px;
-}*/
-
 p {
     text-align: justify;
 }
@@ -131,7 +126,7 @@ span[data-toggle=tooltip] {
 }
 
 .navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus {
-    box-shadow: inset 0px -2px 0px 0px #fff !important;
+    box-shadow: inset 0 -2px 0 0 #fff !important;
     border-bottom: 2px solid #222;
     background: none;
     transition: color 0.2s;
@@ -157,7 +152,7 @@ a.circle-button {
     font-size: 28px;
     color: #fff;
     position: relative;
-    top: 0px;
+    top: 0;
     transition: all 0.3s ease-in-out;
 }
 
@@ -191,7 +186,7 @@ a.circle-button:hover {
 }
 
 #documents {
-    background: url('../img/documents.jpg') center;
+    background: url('../img/documents.jpg') fixed center;
 }
 
 #documents > .container {
@@ -199,7 +194,7 @@ a.circle-button:hover {
 }
 
 #authors {
-    background: #EEC
+    background: #EEC;
 }
 
 #authors .page-header {
@@ -207,7 +202,7 @@ a.circle-button:hover {
 }
 
 #contact {
-    background: url('../img/old-phone.jpg') center;
+    background: url('../img/old-phone.jpg') fixed center;
 }
 
 #contact > .container {
