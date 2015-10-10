@@ -190,6 +190,30 @@ a.circle-button:hover {
     color: #BFA86A
 }
 
+#documents {
+    background: url('../img/documents.jpg') center;
+}
+
+#documents > .container {
+    background: rgba(255, 255, 255, .95);
+}
+
+#authors {
+    background: #EEC
+}
+
+#authors .page-header {
+    border-color: #CCC;
+}
+
+#contact {
+    background: url('../img/old-phone.jpg') center;
+}
+
+#contact > .container {
+    background: rgba(255, 255, 255, .95);
+}
+
 section {
     padding-top: 100px;
     padding-bottom: 100px;
