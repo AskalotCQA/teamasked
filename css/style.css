@@ -222,3 +222,7 @@ section {
 .transparent-fadeIn {
     opacity: 0;
 }
+
+.transparent-fadeIn-full {
+    opacity: 0;
+}

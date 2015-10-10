@@ -1,6 +1,7 @@
 $(function () {
     var $headerNav = $('#header-navbar');
     var $transparentFadeIn = $('.transparent-fadeIn');
+    var $transparentFadeInFull = $('.transparent-fadeIn-full');
     var $body = $('body');
 
     $(window).scroll(function () {
@@ -20,6 +21,15 @@ $(function () {
 
             if (bottomOfWindow > bottomOfObject) {
                 $(this).animate({opacity: '1'}, 500);
+            }
+        });
+
+        $transparentFadeInFull.each(function() {
+            var bottomOfObject = $(this).offset().top + $(this).height();
+            var bottomOfWindow = $(window).scrollTop() + $(window).height();
+
+            if (bottomOfWindow > bottomOfObject) {
+                $(this).animate({opacity: '1'}, 500)
             }
         });
 
