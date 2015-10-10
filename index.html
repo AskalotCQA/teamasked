@@ -25,23 +25,21 @@
       header { margin: 0; }
       footer { margin: 400px 0 100px; font-size: 14px; }
 
-      h1, h2 { padding-top: 75px; }
+      h1 { padding-top: 75px; }
 
       p { text-align: justify; }
       span[data-toggle=tooltip] { cursor: help; }
 
       .btn-production { display: inline-block; margin-top: 30px; }
 
-      .jumbotron { background: url("img/pattern.jpg") #232323; color: #fff; min-height: 100vh; text-align: center; padding-top: 10vh; }
+      .jumbotron { background: url("img/pattern.jpg") #232323; color: #fff; min-height: 100vh; text-align: center; padding-top: 10vh; margin: 0; }
       .jumbotron p { text-align: center; margin-top: 30px; }
       .jumbotron h1 { font-size: 80px; transition: opacity 3.2s !important; text-shadow: 0 0 96px #A7672A;}
 
       .link-muted, .link-muted:focus, .link-muted:hover { color: #333; }
 
       .media { margin-top: 50px; }
-      .media > .pull-left { margin: 75px 40px 0 0; }
-      .media .list-unstyled { margin-left: 12px; }
-      .media .list-unstyled li:first-letter { display:inline-block; margin-left: -10px; padding-left: 5px; border-left: 5px solid #eee; }
+      .media p { text-align: center; color: #555;}
 
       .nav > li > a { display: inline-block; }
       .nav li > a:focus, .nav li > a:hover { background: transparent; text-decoration: underline; }
@@ -58,7 +56,9 @@
       .text-muted a { color: #999; }
       .text-muted a:focus, .text-muted a:hover { color: #888; }
 
-      #header-navbar { visibility: hidden; opacity: 0; transition: opacity 0.3s; }
+      #header-navbar { visibility: hidden; opacity: 0; transition: opacity 0.3s; border: 0; }
+      .navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:hover, .navbar-inverse .navbar-nav>.active>a:focus { box-shadow: inset 0px -2px 0px 0px #fff !important; border-bottom: 2px solid #222; background: none; transition: color 0.2s; }
+
       #project-name, #project-title, #project-links { opacity: 0; transition: opacity 1.5s; }
 
       .circle-button { border: 1px solid #fff; border-radius: 50% !important; display: block; width: 40px; height: 40px; margin: 0 auto; margin-top: 40px; opacity: 0; }
@@ -72,7 +72,7 @@
       #project-links a:hover { color: #BFA86A }
     </style>
   </head>
-  <body data-spy="scroll" data-target="#sidebar">
+  <body>
     <header id="header-navbar" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
       <div class="container">
         <div class="navbar-header">
@@ -118,9 +118,9 @@
       </div>
     </div>
 
-    <div class="container">
+    <div class="container hidden-before-load">
       <div class="row">
-        <div class="col-xs-12 col-md-10" role="main">
+        <div class="col-xs-12" role="main">
           <section>
             <div class="page-header">
               <h1 id="about">O projekte</h1>
@@ -237,180 +237,51 @@
               <h3 class="text-center">Tím č. 6 &mdash; <span class="text-capital">AskEd</span></h3>
             </div>
 
-            <div class="">
-              <ul class="nav nav-justified text-center">
-                <li>
-                  <a href="#authors-srba" data-toggle="tooltip" data-placement="bottom" title="Ivan Srba">
-                    <img class="img-circle" src="https://gravatar.com/avatar/0ac3817122c10f1e3d36b55fcbfe3dd3?rating=&amp;d=mm&amp;size=80" />
-                  </a>
-                </li>
-                <li>
-                  <a href="#authors-cernak" data-toggle="tooltip" data-placement="bottom" title="Martin Černák">
-                    <img class="img-circle" src="https://gravatar.com/avatar/fffdba773f47cdbded51bfe3338baf9e?rating=&amp;d=mm&amp;size=80" />
-                  </a>
-                </li>
-                <li>
-                  <a href="#authors-gallay" data-toggle="tooltip" data-placement="bottom" title="Ladislav Gallay">
-                    <img class="img-circle" src="https://gravatar.com/avatar/34ed5157edb8b8a3a100fbafe787a3f1?rating=&amp;d=mm&amp;size=80" />
-                  </a>
-                </li>
-                <li>
-                  <a href="#authors-hnilicova" data-toggle="tooltip" data-placement="bottom" title="Eva Hnilicová">
-                    <img class="img-circle" src="https://gravatar.com/avatar/a99f0c0b9b0bbf2c787a80a2d87abf4f?rating=&amp;d=mm&amp;size=80" />
-                  </a>
-                </li>
-                <li>
-                  <a href="#authors-huna" data-toggle="tooltip" data-placement="bottom" title="Adrián Huňa">
-                    <img class="img-circle" src="https://gravatar.com/avatar/af387e3e96bcca437ee0dfa47b3127b1?rating=&amp;d=mm&amp;size=80" />
-                  </a>
-                </li>
-                <li>
-                  <a href="#authors-jandura" data-toggle="tooltip" data-placement="bottom" title="Filip Jandura">
-                    <img class="img-circle" src="https://gravatar.com/avatar/d44370839097feef724ae8d02601f977?rating=&amp;d=mm&amp;size=80" />
-                  </a>
-                </li>
-                <li>
-                  <a href="#authors-zuffa" data-toggle="tooltip" data-placement="bottom" title="Tibor Žuffa">
-                    <img class="img-circle" src="https://gravatar.com/avatar/faa7ae3bc1997e597d1e17e906533273?rating=&amp;d=mm&amp;size=80" />
-                  </a>
-                </li>
-              </ul>
-
-              <hr/>
-            </div>
-
-            <div class="media">
-              <a class="pull-left" href="https://gravatar.com/avatar/0ac3817122c10f1e3d36b55fcbfe3dd3?rating=&amp;d=mm&amp;size=400">
-                <img class="media-object img-circle" src="https://gravatar.com/avatar/0ac3817122c10f1e3d36b55fcbfe3dd3?rating=&amp;d=mm&amp;size=180" />
-              </a>
-
-              <div class="media-body">
-                <h2 id="authors-srba" class="media-heading">
-                  Ivan Srba
-                  <small>Mentor tímu</small>
-                </h2>
-
-                <ul class="list-unstyled">
-                  <li>
-                    Zaoberá sa výskumom v oblasti informačných systémov pre zdieľanie znalostí so zameraním na CQA systémy
-                  <li>
-                    Ma skúsenosti s programovacími jazykmi a webovými technológiami ako Ruby, JavaScript, PHP, Node.js a s databázovými technológiami MySQL a PostgreSQL
-                  </li>
-                  <li>
-                    Pracoval na viacerých projektoch, ktoré sa úspešne používajú aj v rámci fakulty (napr. YonBan)
-                  </li>
-                  <li>
-                    Zaujíma sa o fotografovanie, cestovanie a turistiku, vo voľnom čase sa rád hrá s bublifukom
-                  </li>
-                </ul>
+            <div class="row media">
+              <div class="col-md-6 col-md-offset-3 col-sm-12 text-center">
+                <img class="img-circle" src="https://gravatar.com/avatar/0ac3817122c10f1e3d36b55fcbfe3dd3?rating=&amp;d=mm&amp;size=200" />
+                <h3>Ivan Srba <br><small>Mentor tímu</small></h3>
+                <p>Zaoberá sa výskumom v oblasti informačných systémov pre zdieľanie znalostí so zameraním na CQA systémy. Ma skúsenosti s programovacími jazykmi a webovými technológiami ako Ruby, JavaScript, PHP, Node.js a s databázovými technológiami MySQL a PostgreSQL. Pracoval na viacerých projektoch, ktoré sa úspešne používajú aj v rámci fakulty (napr. YonBan). Zaujíma sa o fotografovanie, cestovanie a turistiku, vo voľnom čase sa rád hrá s bublifukom.</p>
               </div>
             </div>
 
-            <div class="media">
-              <a class="pull-left" href="https://gravatar.com/avatar/fffdba773f47cdbded51bfe3338baf9e?rating=&amp;d=mm&amp;size=400">
-                <img class="media-object img-circle" src="https://gravatar.com/avatar/fffdba773f47cdbded51bfe3338baf9e?rating=&amp;d=mm&amp;size=180" />
-              </a>
+            <div class="row media">
+              <div class="col-md-4 col-sm-6 col-xs-12 text-center">
+                <img class="img-circle" src="https://gravatar.com/avatar/fffdba773f47cdbded51bfe3338baf9e?rating=&amp;d=mm&amp;size=200" />
+                <h3>Martin Černák</h3>
+                <p></p>
+              </div>
 
-              <div class="media-body">
-                <h2 id="authors-cernak" class="media-heading">
-                  Martin Černák
-                  <small></small>
-                </h2>
+              <div class="col-md-4 col-sm-6 col-xs-12 text-center">
+                <img class="img-circle" src="http://gravatar.com/avatar/34ed5157edb8b8a3a100fbafe787a3f1?rating=&amp;d=mm&amp;size=200" />
+                <h3>Ladislav Gallay</h3>
+                <p></p>
+              </div>
 
-                <ul class="list-unstyled">
-                  <li>
-                  </li>
-                </ul>
+              <div class="col-md-4 col-sm-6 col-xs-12 text-center">
+                <img class="img-circle" src="https://gravatar.com/avatar/a99f0c0b9b0bbf2c787a80a2d87abf4f?rating=&amp;d=mm&amp;size=200" />
+                <h3>Eva Hnilicová</h3>
+                <p></p>
               </div>
             </div>
 
-            <div class="media">
-              <a class="pull-left" href="http://gravatar.com/avatar/34ed5157edb8b8a3a100fbafe787a3f1?rating=&amp;d=mm&amp;size=400">
-                <img class="media-object img-circle" src="http://gravatar.com/avatar/34ed5157edb8b8a3a100fbafe787a3f1?rating=&amp;d=mm&amp;size=180" />
-              </a>
-
-              <div class="media-body">
-                <h2 id="authors-gallay" class="media-heading">
-                  Ladislav Gallay
-                  <small></small>
-                </h2>
-
-                <ul class="list-unstyled">
-                  <li>
-                  </li>
-                </ul>
+            <div class="row media">
+              <div class="col-md-4 col-sm-6 col-xs-12 text-center">
+                <img class="img-circle" src="https://gravatar.com/avatar/af387e3e96bcca437ee0dfa47b3127b1?rating=&amp;d=mm&amp;size=200" />
+                <h3>Adrián Huňa</h3>
+                <p>Pracuje s webovými technológiami na oboch frontoch. V bakalárskej práci skúmal reputáciu používateľov a následne vyvinul systém reputácie v systéme Askalot. Zaujíma ho psychológia a architektúra.</p>
               </div>
-            </div>
 
-            <div class="media">
-              <a class="pull-left" href="https://gravatar.com/avatar/a99f0c0b9b0bbf2c787a80a2d87abf4f?rating=&amp;d=mm&amp;size=400">
-                <img class="media-object img-circle" src="https://gravatar.com/avatar/a99f0c0b9b0bbf2c787a80a2d87abf4f?rating=&amp;d=mm&amp;size=180" />
-              </a>
-
-              <div class="media-body">
-                <h2 id="authors-hnilicova" class="media-heading">
-                  Eva Hnilicová
-                  <small></small>
-                </h2>
-
-                <ul class="list-unstyled">
-                  <li>
-                  </li>
-                </ul>
+              <div class="col-md-4 col-sm-6 col-xs-12 text-center">
+                <img class="img-circle" src="https://gravatar.com/avatar/d44370839097feef724ae8d02601f977?rating=&amp;d=mm&amp;size=200" />
+                <h3>Filip Jandura</h3>
+                <p></p>
               </div>
-            </div>
 
-            <div class="media">
-              <a class="pull-left" href="https://gravatar.com/avatar/af387e3e96bcca437ee0dfa47b3127b1?rating=&amp;d=mm&amp;size=400">
-                <img class="media-object img-circle" src="https://gravatar.com/avatar/af387e3e96bcca437ee0dfa47b3127b1?rating=&amp;d=mm&amp;size=180" />
-              </a>
-
-              <div class="media-body">
-                <h2 id="authors-huna" class="media-heading">
-                  Adrián Huňa
-                  <small></small>
-                </h2>
-
-                <ul class="list-unstyled">
-                  <li>
-                  </li>
-                </ul>
-              </div>
-            </div>
-
-            <div class="media">
-              <a class="pull-left" href="https://gravatar.com/avatar/d44370839097feef724ae8d02601f977?rating=&amp;d=mm&amp;size=400">
-                <img class="media-object img-circle" src="https://gravatar.com/avatar/d44370839097feef724ae8d02601f977?rating=&amp;d=mm&amp;size=180" />
-              </a>
-
-              <div class="media-body">
-                <h2 id="authors-jandura" class="media-heading">
-                  Filip Jandura
-                  <small></small>
-                </h2>
-
-                <ul class="list-unstyled">
-                  <li>
-                  </li>
-                </ul>
-              </div>
-            </div>
-
-            <div class="media">
-              <a class="pull-left" href="https://gravatar.com/avatar/faa7ae3bc1997e597d1e17e906533273?rating=&amp;d=mm&amp;size=400">
-                <img class="media-object img-circle" src="https://gravatar.com/avatar/faa7ae3bc1997e597d1e17e906533273?rating=&amp;d=mm&amp;size=180" />
-              </a>
-
-              <div class="media-body">
-                <h2 id="authors-zuffa" class="media-heading">
-                  Tibor Žuffa
-                  <small></small>
-                </h2>
-
-                <ul class="list-unstyled">
-                  <li>
-                  </li>
-                </ul>
+              <div class="col-md-4 col-sm-6 col-xs-12 text-center">
+                <img class="img-circle" src="https://gravatar.com/avatar/faa7ae3bc1997e597d1e17e906533273?rating=&amp;d=mm&amp;size=200" />
+                <h3>Tibor Žuffa</h2>
+                <p></p>
               </div>
             </div>
           </section>
@@ -446,43 +317,10 @@
             </div>
           </section>
         </div>
-
-        <div class="col-md-2 hidden-xs hidden-sm hidden-print">
-          <div id="sidebar" class="sidebar" data-spy="affix" data-offset-top="300" role="complementary">
-            <ul class="nav">
-              <li>
-                <a href="#about">O projekte</a>
-              </li>
-              <li>
-                <a href="#documents">Dokumenty</a>
-                <ul class="nav">
-                  <li><a href="#documents-documentation">Dokumentácia</a></li>
-                  <li><a href="#documents-reports">Zápisnice</a></li>
-                  <li><a href="#documents-other">Ostatné</a></li>
-                </ul>
-              </li>
-              <li>
-                <a href="#authors">Autori</a>
-                <ul class="nav">
-                  <li><a href="#authors-srba">Ivan Srba</a></li>
-                  <li><a href="#authors-cernak">Martin Černák</a></li>
-                  <li><a href="#authors-gallay">Ladislav Gallay</a></li>
-                  <li><a href="#authors-hnilicova">Eva Hnilicová</a></li>
-                  <li><a href="#authors-huna">Adrián Huňa</a></li>
-                  <li><a href="#authors-jandura">Filip Jandura</a></li>
-                  <li><a href="#authors-zuffa">Tibor Žuffa</a></li>
-                </ul>
-              </li>
-              <li>
-                <a href="#contact">Kontakt</a>
-              </li>
-            </ul>
-          </div>
-        </div>
       </div>
     </div>
 
-    <footer>
+    <footer class="hidden-before-load">
       <div class="container">
         <p class="text-center text-muted">
           Copyright 2015 Martin Černák, Ladislav Gallay, Eva Hnilicová, Adrián Huňa, Filip Jandura, Tibor Žuffa, Ivan Srba
@@ -515,10 +353,13 @@
           $('#sidebar').css('visibility', pos < $(window).height() ? 'hidden' : 'visible');
         });
 
+        $('.hidden-before-load').hide();
+
         setTimeout(function() { $('#project-name').css('opacity', '1'); }, 700);
         setTimeout(function() { $('#project-title').css('opacity', '1'); }, 2000);
         setTimeout(function() { $('#project-links').css('opacity', '1'); }, 2000);
         setTimeout(function() { $('.circle-button').css('opacity', '1'); }, 2000);
+        setTimeout(function() { $('.hidden-before-load').show();  $('body').scrollspy({ target: '#header-navbar' }) }, 2500);
 
         $('a[href*=#]:not([href=#])').click(function() {
           if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
@@ -532,7 +373,7 @@
             }
           }
         });
-      })
+      });
     </script>
   </body>
 </html>
