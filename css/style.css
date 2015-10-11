@@ -221,3 +221,7 @@ section {
 .transparent-fadeIn-full {
     opacity: 0;
 }
+
+.min-height-310 {
+    min-height: 310px;
+}
