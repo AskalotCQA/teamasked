@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html>
+<head lang="sk">
+    <meta charset="utf-8"/>
+    <title>Askalot to edX &middot; Tím AskEd</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content="AskEd &ndash; integrácia Askalotu do edX"/>
+    <meta name="author" content="AskEd"/>
+    <link rel="apple-touch-icon" href="img/icons/touchicon.png"/>
+    <link rel="icon" href="img/icons/favicon.png"/>
+    <!--[if IE]>
+    <link rel="shortcut icon" href="img/icons/favicon.ico"/><![endif]-->
+    <meta name="msapplication-TileColor" content="#fff"/>
+    <meta name="msapplication-TileImage" content="img/icons/tileicon.png"/>
+    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="css/font-awesome.min.css" rel="stylesheet" media="screen">
+    <link href="css/style.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<header id="header-navbar" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#"><span class="text-capital">AskEd</span></a>
+        </div>
+        <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="#authors">Authors</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+</header>
+
+<div class="jumbotron">
+    <div class="container">
+        <h1 id="project-name">Askalot2edX</h1>
+
+        <p id="project-title">Integration of Askalot in to edX - massive open online course provider</p>
+
+        <div class="row" id="project-links">
+            <div class="col-md-6">
+                <ul class="nav">
+                    <li class="text-right"><a href="http://fiit.stuba.sk/en.html"><em>Faculty of Inforamtics Information Technologies
+                        technológií</em></a></li>
+                    <li class="text-right"><a href="http://fiit.stuba.sk/~bielik/courses/tp-slov"><em>Team Project
+                        2015/16</em></a></li>
+                </ul>
+            </div>
+            <div class="col-md-6">
+                <ul class="nav">
+                    <li class="text-left"><a href="http://stuba.sk"><em>Slovak University of Technology</em></a>
+                    </li>
+                    <li class="text-left"><a href="#authors"><em>Team #06 – <span
+                        class="text-capital">AskEd</span></em></a></li>
+                </ul>
+            </div>
+        </div>
+
+        <a href="#about" class="circle-button"><i class="fa fa-angle-down"></i></a>
+    </div>
+</div>
+
+<!--
+<section class="transparent-fadeIn" id="about">
+    <div class="container">
+        <div class="page-header">
+            <h1>O projekte</h1>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-2">
+                <p class="text-center"><i class="fa fa-info fa-3x"></i></p>
+            </div>
+            <div class="col-xs-10">
+                <p>
+					Nápad na integráciu systému Askalot do systému edX vznikol na CSCW'15, keď mentor tímu, Ivan Srba,
+					na tejto konferencii prezentoval Askalot. Vtedy sa stretol z Joseph-om J. Wiliams-om zo Stanford University
+					a zvážili že Askalot by bol dobrá náhrada za aktuálne fórum v edX.
+					Následne vznikol tím AskEd, ktorý sa skladá zo šiestich ľudí a ich mentora Ivana Srbu,
+					ktorých cieľom je túto integráciu uskutočniť.
+                </p>
+
+				<h2>Askalot</h2>
+
+				<p>
+					Askalot je komunitný systém otázok a odpovedí ktorý bol vyvinutú tímom naRuby
+					v rámci tímového projektu v školskom roku 2013/2014 a momentálne sa aktívne používa na fakulte informatiky a
+					informačných technológií Slovenskej technickej univerzity v Bratislave. Tento projekt tak isto získal ocenenie
+					<a href="http://www2.fiit.stuba.sk/~bielik/courses/tp-slov/tp-cup/index2014.html">TP CUP</a>.
+				</p>
+
+				<p>
+					Systémy otázok a odpovedí sú populárnou súčasťou webu.
+					Medzi najznámejšie patri <a href="http://answers.yahoo.com/">Yahoo! Answers</a>, 
+					<a href="http://wiki.answers.com/">Wiki Answers</a>, či <a href="http://stackoverflow.com/">Stack Overflow</a>.
+					Každý, kto má problém, na ktorý nevie nájsť odpoveď môže využiť 
+					tieto systémy na pridanie svojej otázky a od komunity získať odpoveď.
+					S výberom najlepšej odpovede mu pomáhajú ďalší používatelia, ktorí svojím hlasovaním vyjadrujú súhlas s obsahom odpovede.
+					Ak pýtajúci sa používateľ dostane odpoveď, s ktorou je spokojný, môže túto odpoveď označiť za akceptovanú,
+					aby uľahčil hľadanie riešenia pre používateľov s podobným problémom v budúcnosti.
+				</p>
+
+				<p>
+					Askalot obsahuje všetky hlavné vlastnosti populárnych systémov na otázky a odpovede a rozširuje
+					funkcionalitu tohto systému o špecifické vlastnosti určené na podporu vzdelávania.
+				</p>
+			</div>
+		</div>
+
+		<div class="row">
+
+			<div class="col-xs-2">
+				<img src="img/creating-a-course-with-edx-studio_378x225.jpg" class="img-responsive">
+			</div>
+
+			<div class="col-xs-10">
+				<h2>edX</h2>
+
+
+				<p>
+					edX je jeden z najväčších poskytovateľov otvorených kurzov pre masy (angl. Masive Open Online Course, MOOC),
+					ktorý vytvorili v roku 2012 <a href="http://web.mit.edu/">MIT</a> a <a href="http://www.harvard.edu/">Harvard University</a>.
+					Podľa odhadov ku aprílu roku 2015 je v tomto systéme zaregistrovaných
+					vyše 4 milióny používateľov a používa ho výše 70 univerzít, neziskovích organizácií a spoločností.
+				</p>
+				<p>
+					<a href="https://www.wikiwand.com/en/Massive_open_online_course">MOOC</a> je kurz,
+					ktorý je poskytovaný neobmedzenému počtu účastníkov a je dostupný cez webové rozhranie. 
+					V rámci kurzu zvyknú byť poskytované záznamy prednášok, skriptá a cvičenia. 
+					Väčšinou majú aj fórum na podporu komunity. Tieto kurzy sú výsledkom výskumu v oblasti vzdelávania na diaľku.
+				</p>
+
+				<img src="img/MOOC_poster_mathplourde.jpg" class="img-responsive">
+		
+				<p class="text-center">Zdroj <a href="https://en.wikipedia.org/wiki/File:MOOC_poster_mathplourde.jpg">Wikipedia</a></p>
+				</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="transparent-fadeIn" id="documents">
+    <div class="container section-container">
+        <div class="page-header">
+            <h1>Dokumenty</h1>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-2">
+                <p class="text-center"><i class="fa fa-file-text-o fa-3x"></i></p>
+            </div>
+            <div class="col-xs-10">
+                <p>
+                    Dokumentácia k projektu a zápisnice z pravidelných formálnych aj neformálnych
+                    stretnutí tímu.
+                </p>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <h3>Zimný semester</h3>
+                        <ul>
+                            <li>
+								<a href="exports/export_5_10_2015.pdf">Export úloh z 5.10.2015</a>
+                            </li>
+							<li>
+								<a href="exports/export_15_10_2015.pdf">Export úloh z 15.10.2015</a>
+							</li>
+							<li>
+								<a href="exports/export_21_10_2015.pdf">Export úloh z 21.10.2015</a>
+							</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6 hide">
+                        <h3>Letný semester</h3>
+
+                        <ul>
+                            <li>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-6 hide">
+                    <h3>Zápisnice z neformálnych stretnutí</h3>
+
+                    <ol>
+                        <li></li>
+                    </ol>
+
+                </div>
+
+                <div class="col-sm-6 hide">
+                    <h3>Retrospektívy</h3>
+
+                    <ul>
+                        <li></li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="row" style="height: 50px;"></div>
+
+        <div class="row">
+            <div class="col-xs-2">
+                <p class="text-center"><i class="fa fa-picture-o fa-3x"></i></p>
+            </div>
+            <div class="col-xs-10">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h3>Prezentácie a plagáty</h3>
+
+                        <ul>
+                            <li></li>
+                        </ul>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+-->
+
+<section class="transparent-fadeIn" id="authors">
+    <div class="container">
+        <div class="page-header">
+            <h1>Authors</h1>
+        </div>
+
+        <div class="row transparent-fadeIn-full">
+            <div class="col-xs-2">
+                <p class="text-center"><i class="fa fa-users fa-3x"></i></p>
+            </div>
+            <div class="col-xs-10">
+                <p>
+                    Team <span class="text-capital">AskEd</span> is consist of six students of the first year
+                    of enginering studies at FIIT STU and their mentor Ivan Srva.
+
+                <p>
+            </div>
+        </div>
+
+        <div class="page-header">
+            <h3 class="text-center">Tím č. 6 &mdash; <span class="text-capital">AskEd</span></h3>
+        </div>
+
+        <div class="row media transparent-fadeIn-full">
+            <div class="col-md-6 col-md-offset-3 col-sm-12 text-center">
+                <img class="img-circle"
+                     src="https://gravatar.com/avatar/0ac3817122c10f1e3d36b55fcbfe3dd3?rating=&amp;d=mm&amp;size=200"/>
+
+                <h3>Ivan Srba <br>
+                    <small>Team Mentor</small>
+                </h3>
+				<!--
+                <p>
+                    Zaoberá sa výskumom v oblasti informačných systémov pre zdieľanie znalostí so zameraním
+                    na CQA systémy. Má skúsenosti s programovacími jazykmi a webovými technológiami ako
+                    Ruby, JavaScript, PHP, Node.js a s databázovými technológiami MySQL a PostgreSQL.
+                    Pracoval na viacerých projektoch, ktoré sa úspešne používajú aj v rámci fakulty (napr.
+                    YonBan). Zaujíma sa o fotografovanie, cestovanie a turistiku, vo voľnom čase sa rád hrá
+                    s bublifukom.
+                </p>
+				-->
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4 col-sm-6 col-xs-12 text-center transparent-fadeIn-full min-height-310">
+                <img class="img-circle"
+                     src="https://gravatar.com/avatar/fffdba773f47cdbded51bfe3338baf9e?rating=&amp;d=mm&amp;size=200"/>
+
+                <h3>Martin Černák <br>
+                    <small>Retrospective, design and presentation web management</small>
+                </h3>
+				<!--
+                <p>
+                    Pracuje s webovými technológiami a zaoberá sa najmä php (nette, yii2), javascript (jQuery) a css
+                    (bootstrap). Ako bakalársky projekt riešil dynamické odporúčanie.
+                </p>
+				-->
+            </div>
+
+            <div class="col-md-4 col-sm-6 col-xs-12 text-center transparent-fadeIn-full min-height-310">
+                <img class="img-circle"
+                     src="http://gravatar.com/avatar/34ed5157edb8b8a3a100fbafe787a3f1?rating=&amp;d=mm&amp;size=200"/>
+
+                <h3>Ladislav Gallay <br>
+                    <small>Development support, integration and version control management</small>
+                </h3>
+				<!--
+                <p>V rámci bakalárskeho projektu sa venoval využitiu vektorového modelu slov
+                    pri automatickej lematizácii za použitia nástroja word2vec. Zaujíma sa o webové technológie
+                    a tvorbu webových aplikácii. Hovorí plynule PHP, Ruby, Java, JavaScript, C++, PostgreSQL...
+                    Rád hrá na hudobné nástroje a strihá videá.</p>
+				-->
+            </div>
+
+            <div class="col-md-4 col-sm-6 col-xs-12 text-center transparent-fadeIn-full min-height-310">
+                <img class="img-circle"
+                     src="https://gravatar.com/avatar/a99f0c0b9b0bbf2c787a80a2d87abf4f?rating=&amp;d=mm&amp;size=200"/>
+
+                <h3>Eva Hnilicová <br>
+                    <small>Documentation and design management</small>
+                </h3>
+				<!--
+                <p>V rámci bakalárskeho projektu sa venovala tvorbe reportov nad knižničnými
+                    dátami a vývojom webovej aplikácie pre tento účel. Vďaka tomu sa začala
+                    viac venovať aj webu všeobecne, hlavne z pohľadu použiteľnosti a dizajnu.
+                    Mimo fakulty sa aj naďalej venuje tvorbe a generovaniu špecifických reportov,
+                    okrem iného, aj za použitia HTML (HTML5) a CSS. Vo voľnom čase sa odmalička
+                    aktívne venuje výtvarnému umeniu (maľba a kresba) a tiež nepohrdne dobrou knihou.</p>
+				-->
+            </div>
+
+            <div class="col-md-4 col-sm-6 col-xs-12 text-center transparent-fadeIn-full min-height-310">
+                <img class="img-circle"
+                     src="https://gravatar.com/avatar/c9936ca861272a30d5a28605a6fcb89a?rating=&amp;d=mm&amp;size=200"/>
+
+                <h3>Adrián Huňa <br>
+                    <small>Code quality and testing management</small>
+                </h3>
+				<!--
+                <p>V bakalárskej práci skúmal reputáciu používateľov v CQA systémoch a následne
+                    svoje poznatky aplikoval pri integrácii tejto metódy do systému Askalot. Najviac ho
+                    baví práca s webovými technológiami, pričom momentálne obľubuje frameworky Laravel
+                    a AngularJS. Zaujíma ho psychológia a architektúra a rád si prečíta dobrý článok
+                    z týchto oblastí.</p>
+				-->
+            </div>
+
+            <div class="col-md-4 col-sm-6 col-xs-12 text-center transparent-fadeIn-full min-height-310">
+                <img class="img-circle"
+                     src="https://gravatar.com/avatar/d44370839097feef724ae8d02601f977?rating=&amp;d=mm&amp;size=200"/>
+
+                <h3>Filip Jandura <br>
+                    <small>System and project manager</small>
+                </h3>
+                <p></p>
+            </div>
+
+            <div class="col-md-4 col-sm-6 col-xs-12 text-center transparent-fadeIn-full min-height-310">
+                <img class="img-circle"
+                     src="https://gravatar.com/avatar/faa7ae3bc1997e597d1e17e906533273?rating=&amp;d=mm&amp;size=200"/>
+
+                <h3>Tibor Žuffa <br>
+                    <small>Comunication and task export management</small>
+                </h3>
+				<!--
+                <p>V bakalárskej práci sa venoval časovým radom a tvorbe prognóz. Zaujíma sa o vytváranie 
+					webových aplikácií. Páči sa mu Ruby on Rails a HTML5. Vo voľnom čase si rád pozrie seriál 
+					alebo vypočuje dobrú audioknihu.</p>
+				-->
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="transparent-fadeIn" id="contact">
+    <div class="container section-container">
+        <div class="page-header">
+            <h1>Contact</h1>
+        </div>
+
+        <div class="row">
+            <div class="col-md-7">
+                <h3>Contact us</h3>
+
+                <p>
+                    <a class="btn btn-default btn-lg" href="mailto:asked@googlegroups.com">
+                        asked@googlegroups.com
+                    </a>
+                </p>
+            </div>
+
+            <div class="col-md-5">
+                <h3>Adress <i class="fa fa-envelope-o"></i></h3>
+
+                <address class="well">
+                    Slovenská technická univerzita v Bratislave<br/>
+                    Fakulta informatiky a informačných technológií<br/>
+                    Ilkovičova 2<br/>
+                    842 16 Bratislava 4 - Karlova Ves<br/>
+                    Slovensko<br/>
+                    <br/>
+                    <span data-toggle="tooltip" data-placement="bottom" title="Global Positioning System">GPS</span>:
+                    <a class="link-muted"
+                       href="https://www.google.com/maps?t=m&amp;ll=48.15342100000003%2C17.072221299999992&amp;spn=0.005976687506477521%2C0.011944952557732511&amp;output=classic&amp;cid=0x8b585229fc0ae860">48.153429,
+                        17.071716</a>
+                </address>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="hidden-before-load">
+    <div class="container">
+        <p class="text-center text-muted">
+            Copyright 2015 Martin Černák, Ladislav Gallay, Eva Hnilicová, Adrián Huňa, Filip Jandura, Tibor Žuffa, Ivan
+            Srba
+            <br class="visible-md visible-lg"/>
+            <a href="http://stuba.sk">Slovenská technická univerzita v&nbsp;Bratislave</a>,
+            <a href="http://fiit.stuba.sk">Fakulta informatiky a&nbsp;informačných technológií</a>,
+            <a href="http://fiit.stuba.sk/~bielik/courses/tp-slov">Tímový projekt&nbsp;2015/16</a>
+        </p>
+    </div>
+</footer>
+
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+
+<script src="js/init.js"></script>
+</body>
+</html>
