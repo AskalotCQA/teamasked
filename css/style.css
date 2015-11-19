@@ -225,3 +225,9 @@ section {
 .min-height-310 {
     min-height: 310px;
 }
+
+.language {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+}
