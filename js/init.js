@@ -50,7 +50,7 @@ $(function () {
     }, 1000);
 
 
-    $('a[href*=#]').click(function (event) {
+    $('a[href*=#]:not([href=#ls], [href=#zs], [href=#1kb], [href=#2kb], [href=#identita], [href=#tpcup])').click(function (event) {
         var href = $(this).attr('href');
 
         var $target = (href.indexOf('#', href.length - 1)) ? $($(this).attr('href')) : $body;

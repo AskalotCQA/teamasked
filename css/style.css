@@ -19,7 +19,7 @@ footer {
     margin:50px 0 50px;
     font-size: 14px;
 }
-
+a
 p {
     text-align: justify;
 }
@@ -230,4 +230,23 @@ section {
     position: fixed;
     top: 10px;
     right: 10px;
+}
+
+a:active, a:focus {
+    text-decoration: none !important;
+}
+
+.social-icons {
+    font-size: 25px;
+}
+
+small {
+    display: block;
+    font-size: 15px !important;
+    margin-top: 5px;
+    min-height: 30px;
+}
+
+.img-circle {
+    margin-top: 10px;
 }
